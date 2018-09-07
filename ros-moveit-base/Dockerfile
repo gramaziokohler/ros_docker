@@ -23,9 +23,11 @@ RUN apt-get update && apt-get install -y \
 
 # Initialize local catkin workspace
 RUN source /opt/ros/kinetic/setup.bash && \
+    apt-get update && \
     cd /catkin_ws && \
     rosdep install -y --from-paths . --ignore-src --rosdistro kinetic && \
-    catkin_make
+    catkin_make && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY ./ros_catkin_entrypoint.sh /
 
