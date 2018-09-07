@@ -25,7 +25,7 @@ services:
       - rosbridge_websocket.launch
 
   ros-fileserver:
-    image: gramaziokohler/ros-base
+    image: gramaziokohler/ros-moveit-base
     container_name: ros-fileserver
     environment:
       - "ROS_HOSTNAME=ros-fileserver"
@@ -44,6 +44,7 @@ services:
     environment:
       - "DISPLAY=docker.for.win.localhost:0.0"
       # - "DISPLAY=docker.for.mac.localhost:0.0"   (swap this with the previous line if on Mac)
+      - "QT_X11_NO_MITSHM=1"
       - "ROS_HOSTNAME=ros-moveit-base"
       - "ROS_MASTER_URI=http://ros-master:11311"
     depends_on:

@@ -16,10 +16,10 @@ RUN mkdir -p /catkin_ws/src
 # Setup MoveIt tutorials
 RUN apt-get update && apt-get install -y \
     ros-kinetic-franka-description && \
+    rm -rf /var/lib/apt/lists/* && \
     cd /catkin_ws/src && \
     git clone https://github.com/ros-planning/moveit_tutorials.git && \
     git clone https://github.com/ros-planning/panda_moveit_config.git
-
 
 # Initialize local catkin workspace
 RUN source /opt/ros/kinetic/setup.bash && \

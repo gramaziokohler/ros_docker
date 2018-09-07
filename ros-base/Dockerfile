@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 
 # Create local catkin workshop
 RUN mkdir -p /catkin_ws/src
-    
+
 # Setup ROS File Server
 RUN cd /catkin_ws/src && \
     git clone https://github.com/gramaziokohler/ros_file_server.git

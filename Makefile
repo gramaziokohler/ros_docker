@@ -13,16 +13,16 @@ all: build
 
 build: build-ros-base build-ros-moveit-base
 
-build-ros-base: 
+build-ros-base:
 	$(eval IMAGE:=ros-base)
-	$(eval VERSION:=$(shell cat ros-base/VERSION))
+	$(eval VERSION:=$(shell cat VERSION))
 	@echo 'Building $(IMAGE) image, version $(VERSION)'
 	@cd $(IMAGE);$(DOCKER) build -t $(USERNAME)/$(IMAGE):$(VERSION) -t $(USERNAME)/$(IMAGE):latest .
 	@echo \\n****************************************************************\\n
 
 build-ros-moveit-base:
 	$(eval IMAGE:=ros-moveit-base)
-	$(eval VERSION:=$(shell cat ros-base/VERSION))
+	$(eval VERSION:=$(shell cat VERSION))
 	@echo 'Building $(IMAGE) image, version $(VERSION)'
 	@cd $(IMAGE);$(DOCKER) build -t $(USERNAME)/$(IMAGE):$(VERSION) -t $(USERNAME)/$(IMAGE):latest .
 	@echo \\n****************************************************************\\n
