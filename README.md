@@ -1,11 +1,11 @@
 # ROS Docker files
 
-> ROS-in-a-box: a containerized version of different ROS nodes.
+> ROS-in-a-box: a containerized version of various ROS nodes.
 
 This repository provides `Dockerfile` files to run [ROS](https://ros.org) inside [Docker](https://www.docker.com/) containers:
 
 * **Base ROS image** (`gramaziokohler/ros-base`, [docker hub link](https://hub.docker.com/r/gramaziokohler/ros-base/)): contains ROS and tools to query it over websockers with the `rosbridge`.
-* **ROS + MoveIt!** (`gramaziokohler/ros-moveit-base`, [docker hub link](https://hub.docker.com/r/gramaziokohler/ros-moveit-base/)): contains a full ROS desktop installation, including MoveIt! and some tutorials.
+* **ROS + MoveIt! UR** (`gramaziokohler/ros-ur-planner`, [docker hub link](https://hub.docker.com/r/gramaziokohler/ros-ur-planner/)): contains MoveIt! configured with the Universal Robots packages.
 
 ## How to use
 
