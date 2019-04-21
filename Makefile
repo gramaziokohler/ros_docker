@@ -12,7 +12,7 @@ endif
 
 all: build
 
-build: build-ros-base build-novnc build-ros-ur-planner
+build: build-ros-base build-novnc build-ros-ur-planner build-ros-panda-planner
 
 build-ros-base:
 	$(eval IMAGE:=ros-base)
@@ -32,7 +32,13 @@ build-ros-ur-planner:
 	@cd $(IMAGE);$(DOCKER) build --rm -t $(USERNAME)/$(IMAGE):$(VERSION) -t $(USERNAME)/$(IMAGE):latest .
 	@echo \\n****************************************************************\\n
 
-release: release-ros-base release-novnc release-ros-ur-planner
+build-ros-panda-planner:
+	$(eval IMAGE:=ros-panda-planner)
+	@echo 'Building $(IMAGE) image, version $(VERSION)'
+	@cd $(IMAGE);$(DOCKER) build --rm -t $(USERNAME)/$(IMAGE):$(VERSION) -t $(USERNAME)/$(IMAGE):latest .
+	@echo \\n****************************************************************\\n
+
+release: release-ros-base release-novnc release-ros-ur-planner release-ros-panda-planner
 
 release-ros-base:
 	$(eval IMAGE:=ros-base)
@@ -46,5 +52,10 @@ release-novnc:
 
 release-ros-ur-planner:
 	$(eval IMAGE:=ros-ur-planner)
+	@echo 'Publishing $(IMAGE) image to dockerhub'
+	@$(DOCKER) push $(USERNAME)/$(IMAGE)
+
+release-ros-panda-planner:
+	$(eval IMAGE:=ros-panda-planner)
 	@echo 'Publishing $(IMAGE) image to dockerhub'
 	@$(DOCKER) push $(USERNAME)/$(IMAGE)
