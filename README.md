@@ -33,8 +33,8 @@ Contains MoveIt! configured with the Universal Robots packages.
 
 ## ROS + MoveIt! Franka Emika Panda
 
-[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-ur-pandar.svg)](https://hub.docker.com/r/gramaziokohler/ros-panda-planner)
-[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-ur-pandar.svg)](https://microbadger.com/images/gramaziokohler/ros-panda-planner)
+[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-panda-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-panda-planner)
+[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-panda-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-panda-planner)
 
     $ docker pull gramaziokohler/ros-panda-planner
 
