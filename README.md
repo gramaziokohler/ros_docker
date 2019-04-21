@@ -4,8 +4,32 @@
 
 This repository provides `Dockerfile` files to run [ROS](https://ros.org) inside [Docker](https://www.docker.com/) containers:
 
-* **Base ROS image** (`gramaziokohler/ros-base`, [docker hub link](https://hub.docker.com/r/gramaziokohler/ros-base/)): contains ROS and tools to query it over websockers with the `rosbridge`.
-* **ROS + MoveIt! UR** (`gramaziokohler/ros-ur-planner`, [docker hub link](https://hub.docker.com/r/gramaziokohler/ros-ur-planner/)): contains MoveIt! configured with the Universal Robots packages.
+## Base ROS image
+
+[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-base.svg)](https://hub.docker.com/r/gramaziokohler/ros-base)
+[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-base.svg)](https://microbadger.com/images/gramaziokohler/ros-base)
+
+> `docker pull gramaziokohler/ros-base`
+
+Contains ROS and tools to use it over websockers with `rosbridge-suite`.
+
+## X11 NoVNC display container
+
+[![](https://images.microbadger.com/badges/version/gramaziokohler/novnc.svg)](https://hub.docker.com/r/gramaziokohler/novnc)
+[![](https://images.microbadger.com/badges/image/gramaziokohler/novnc.svg)](https://microbadger.com/images/gramaziokohler/novnc)
+
+> `docker pull gramaziokohler/novnc`
+
+Display X11 applications from other containers directly in the browser.
+
+## ROS + MoveIt! Universal Robots
+
+[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-ur-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-ur-planner)
+[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-ur-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-ur-planner)
+
+> `docker pull gramaziokohler/ros-ur-planner`
+
+Contains MoveIt! configured with the Universal Robots packages.
 
 ## How to use
 
@@ -19,7 +43,7 @@ Open your bash shell in WSL and type:
 
     $ make build
 
-### Publishing docker images
+### Publishing the docker images
 
 Once built, you can release all images to Docker Hub in one command:
 
@@ -57,6 +81,6 @@ services:
       - rosbridge_websocket.launch
 ```
 
-Then start it all with:
+Then start it all up with:
 
     $ docker-compose up -d

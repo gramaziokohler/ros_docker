@@ -1,0 +1,3 @@
+[app] (name=rviz) (class=rviz)
+  [Maximized]   {yes}
+[end]

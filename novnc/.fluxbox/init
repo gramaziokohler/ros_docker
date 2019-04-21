@@ -1,0 +1,11 @@
+! If you're looking for settings to configure, they won't be saved here until
+! you change something in the fluxbox configuration menu.
+
+session.menuFile:       ~/.fluxbox/menu
+session.keyFile: ~/.fluxbox/keys
+session.styleFile:      /usr/share/fluxbox/styles/Doty
+session.configVersion:  13
+session.screen0.toolbar.autoHide: true
+session.screen0.toolbar.widthPercent: 100
+session.screen0.strftimeFormat: %d %b, %a %02k:%M:%S
+session.screen0.toolbar.tools: prevworkspace, workspacename, nextworkspace, clock, prevwindow, nextwindow, iconbar, systemtrayroot@f77aba0a19e0:~/.fluxbox#
