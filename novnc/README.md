@@ -2,7 +2,7 @@
 
 > Display X11 applications from other containers directly in the browser!
 
-```
+```console
     $ docker pull gramaziokohler/novnc
 ```
 
@@ -14,6 +14,10 @@
 * [Fluxbox](http://www.fluxbox.org/): a small window manager
 * [socat](http://www.dest-unreach.org/socat/): for use with other containers
 * [supervisord](http://supervisord.org): to keep it all running
+
+## Usage
+
+The easiest is to use `docker-compose`, start this one container with this image and give it a name, e.g. `my-gui`, and another container where the `DISPLAY` is exported to our container, e.g. `DISPLAY=my-gui:0.0`.
 
 ## Credits
 
