@@ -57,7 +57,7 @@ Once built, you can release all images to Docker Hub in one command:
 
 ### Using the containers
 
-The ideal way to use these images is to create a `docker-compose.yaml` file to set up the full environment at once. Here's an example setup:
+The ideal way to use these images is to create a `docker-compose.yml` file to set up the full environment at once. Here's an example setup:
 
 ```yaml
 version: '3'
