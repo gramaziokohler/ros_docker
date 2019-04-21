@@ -9,9 +9,7 @@ This repository provides `Dockerfile` files to run [ROS](https://ros.org) inside
 [![](https://images.microbadger.com/badges/version/gramaziokohler/ros-base.svg)](https://hub.docker.com/r/gramaziokohler/ros-base)
 [![](https://images.microbadger.com/badges/image/gramaziokohler/ros-base.svg)](https://microbadger.com/images/gramaziokohler/ros-base)
 
-```console
     $ docker pull gramaziokohler/ros-base
-```
 
 Contains ROS and tools to use it over websockers with `rosbridge-suite`.
 
@@ -20,9 +18,7 @@ Contains ROS and tools to use it over websockers with `rosbridge-suite`.
 [![](https://images.microbadger.com/badges/version/gramaziokohler/novnc.svg)](https://hub.docker.com/r/gramaziokohler/novnc)
 [![](https://images.microbadger.com/badges/image/gramaziokohler/novnc.svg)](https://microbadger.com/images/gramaziokohler/novnc)
 
-```console
     $ docker pull gramaziokohler/novnc
-```
 
 Display X11 applications (e.g. `RViz`) from other containers directly in the browser.
 
@@ -31,9 +27,7 @@ Display X11 applications (e.g. `RViz`) from other containers directly in the bro
 [![](https://images.microbadger.com/badges/version/gramaziokohler/ros-ur-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-ur-planner)
 [![](https://images.microbadger.com/badges/image/gramaziokohler/ros-ur-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-ur-planner)
 
-```console
     $ docker pull gramaziokohler/ros-ur-planner
-```
 
 Contains MoveIt! configured with the Universal Robots packages.
 
@@ -42,9 +36,7 @@ Contains MoveIt! configured with the Universal Robots packages.
 [![](https://images.microbadger.com/badges/version/gramaziokohler/ros-ur-pandar.svg)](https://hub.docker.com/r/gramaziokohler/ros-panda-planner)
 [![](https://images.microbadger.com/badges/image/gramaziokohler/ros-ur-pandar.svg)](https://microbadger.com/images/gramaziokohler/ros-panda-planner)
 
-```console
     $ docker pull gramaziokohler/ros-panda-planner
-```
 
 Contains MoveIt! configured with the flagship MoveIt! robot: Franka Emika's
 Panda.
