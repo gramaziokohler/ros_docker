@@ -22,7 +22,7 @@ Contains ROS and tools to use it over websockers with `rosbridge-suite`.
 
 Display X11 applications (e.g. `RViz`) from other containers directly in the browser.
 
-## ROS + MoveIt! Universal Robots
+## ROS + MoveIt! ABB
 
 [![](https://images.microbadger.com/badges/version/gramaziokohler/ros-abb-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-abb-planner)
 [![](https://images.microbadger.com/badges/image/gramaziokohler/ros-abb-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-abb-planner)
