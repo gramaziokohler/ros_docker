@@ -1,8 +1,8 @@
 # Build:
-#  docker build --rm -f Dockerfile -t gramaziokohler/ros-panda-planner .
+#  docker build --rm -f Dockerfile -t gramaziokohler/ros-abb-planner .
 #
 # Usage:
-#  docker pull gramaziokohler/ros-panda-planner
+#  docker pull gramaziokohler/ros-abb-planner
 
 FROM gramaziokohler/ros-base
 LABEL maintainer "Gonzalo Casas <casas@arch.ethz.ch>"
@@ -24,9 +24,9 @@ RUN mkdir -p $CATKIN_WS/src
 RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     # Update apt-get because its cache is always cleared after installs to keep image size down
     && apt-get update \
-    # Panda packages
-    && git clone -b ${ROS_DISTRO}-devel https://github.com/ros-planning/moveit_tutorials.git \
-    && git clone -b ${ROS_DISTRO}-devel https://github.com/ros-planning/panda_moveit_config.git \
+    # ABB packages
+    && git clone -b ${ROS_DISTRO}-devel https://github.com/ros-industrial/abb.git \
+    && git clone -b ${ROS_DISTRO}-devel https://github.com/ros-industrial/abb_experimental.git \
     # Install dependencies
     && cd $CATKIN_WS \
     && rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} \

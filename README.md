@@ -24,6 +24,15 @@ Display X11 applications (e.g. `RViz`) from other containers directly in the bro
 
 ## ROS + MoveIt! Universal Robots
 
+[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-abb-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-abb-planner)
+[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-abb-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-abb-planner)
+
+    $ docker pull gramaziokohler/ros-abb-planner
+
+Contains MoveIt! configured with the ABB packages.
+
+## ROS + MoveIt! Universal Robots
+
 [![](https://images.microbadger.com/badges/version/gramaziokohler/ros-ur-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-ur-planner)
 [![](https://images.microbadger.com/badges/image/gramaziokohler/ros-ur-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-ur-planner)
 
