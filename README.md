@@ -70,10 +70,6 @@ Once built, you can release all images to Docker Hub in one command:
 
 ### Using the containers
 
-> Check the examples folder for many more docker
-
-The ideal way to use these images is to create a `docker-compose.yml` file to set up the full environment at once.
-
 #### Web UI example
 
 1. Copy & Paste the following content into a `docker-compose.yml` file in your computer:
@@ -135,6 +131,7 @@ The ideal way to use these images is to create a `docker-compose.yml` file to se
 
        http://localhost:8080/vnc.html?resize=scale&autoconnect=true
 
+![](rviz-in-browser.png)
 
 #### More examples
 
