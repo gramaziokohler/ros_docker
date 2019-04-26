@@ -70,36 +70,80 @@ Once built, you can release all images to Docker Hub in one command:
 
 ### Using the containers
 
-The ideal way to use these images is to create a `docker-compose.yml` file to set up the full environment at once. Here's an example setup:
+> Check the examples folder for many more docker
 
-```yaml
-version: '3'
-services:
-  ros-master:
-    image: gramaziokohler/ros-base
-    container_name: ros-master
-    ports:
-      - "11311:11311"
-    command:
-      - roscore
+The ideal way to use these images is to create a `docker-compose.yml` file to set up the full environment at once.
 
-  ros-bridge:
-    image: gramaziokohler/ros-base
-    container_name: ros-bridge
-    environment:
-      - "ROS_HOSTNAME=ros-bridge"
-      - "ROS_MASTER_URI=http://ros-master:11311"
-    ports:
-      - "9090:9090"
-    depends_on:
-      - ros-master
-    command:
-      - roslaunch
-      - --wait
-      - rosbridge_server
-      - rosbridge_websocket.launch
-```
+#### Web UI example
 
-Then start it all up with:
+1. Copy & Paste the following content into a `docker-compose.yml` file in your computer:
 
-    $ docker-compose up -d
+    ```yaml
+    version: '2'
+    services:
+      ros-master:
+        image: gramaziokohler/ros-base:19.04
+        container_name: ros-master
+        ports:
+          - "11311:11311"
+        command:
+          - roscore
+
+      ros-bridge:
+        image: gramaziokohler/ros-panda-planner:19.04
+        container_name: ros-bridge
+        environment:
+          - "ROS_HOSTNAME=ros-bridge"
+          - "ROS_MASTER_URI=http://ros-master:11311"
+        ports:
+          - "9090:9090"
+        depends_on:
+          - ros-master
+        command:
+          - roslaunch
+          - --wait
+          - rosbridge_server
+          - rosbridge_websocket.launch
+
+      panda-demo:
+        image: gramaziokohler/ros-panda-planner:19.04
+        container_name: panda-demo
+        environment:
+          - ROS_HOSTNAME=panda-demo
+          - ROS_MASTER_URI=http://ros-master:11311
+          - DISPLAY=gui:0.0
+        depends_on:
+          - ros-master
+          - gui
+        command:
+          - roslaunch
+          - --wait
+          - panda_moveit_config
+          - demo.launch
+
+      gui:
+        image: gramaziokohler/novnc:latest
+        ports:
+          - "8080:8080"
+    ```
+
+2. Start it all up with:
+
+       $ docker-compose up -d
+
+3. Open the following URL in your browser:
+
+       http://localhost:8080/vnc.html?resize=scale&autoconnect=true
+
+
+#### More examples
+
+Check the [examples](examples) folder for several examples of `docker-compose` files.
+
+## Notes
+
+These images are maintained by Gramazio Kohler Research
+[@gramaziokohler](https://github.com/gramaziokohler>)
+
+They are used by the [COMPAS FAB](https://gramaziokohler.github.io/compas_fab) framework
+to provide a [containerized ROS backend for planning and execution](https://gramaziokohler.github.io/compas_fab/latest/backends/ros.html#ros-on-docker-1).
