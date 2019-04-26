@@ -131,7 +131,7 @@ Once built, you can release all images to Docker Hub in one command:
 
        http://localhost:8080/vnc.html?resize=scale&autoconnect=true
 
-![](rviz-in-browser.png)
+![](rviz.png)
 
 #### More examples
 
