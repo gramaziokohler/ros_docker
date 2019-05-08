@@ -21,7 +21,8 @@ ENV CATKIN_WS=/root/catkin_ws
 RUN mkdir -p $CATKIN_WS/src
 
 # Add robot packages to local catkin workspace
-RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
+RUN echo "Building UR Planner for ROS" \
+    && source /opt/ros/${ROS_DISTRO}/setup.bash \
     # Update apt-get because its cache is always cleared after installs to keep image size down
     && apt-get update \
     # UR packages
