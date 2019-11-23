@@ -51,7 +51,7 @@ services:
     command:
       - roslaunch
       - --wait
-      - ur3_moveit_config
+      - ur3_e_moveit_config
       - demo.launch
 
   gui:
