@@ -78,7 +78,7 @@ Once built, you can release all images to Docker Hub in one command:
     version: '2'
     services:
       ros-master:
-        image: gramaziokohler/ros-base:19.04
+        image: gramaziokohler/ros-base:19.11
         container_name: ros-master
         ports:
           - "11311:11311"
@@ -86,7 +86,7 @@ Once built, you can release all images to Docker Hub in one command:
           - roscore
 
       ros-bridge:
-        image: gramaziokohler/ros-panda-planner:19.04
+        image: gramaziokohler/ros-panda-planner:19.11
         container_name: ros-bridge
         environment:
           - "ROS_HOSTNAME=ros-bridge"
@@ -102,7 +102,7 @@ Once built, you can release all images to Docker Hub in one command:
           - rosbridge_websocket.launch
 
       panda-demo:
-        image: gramaziokohler/ros-panda-planner:19.04
+        image: gramaziokohler/ros-panda-planner:19.11
         container_name: panda-demo
         environment:
           - ROS_HOSTNAME=panda-demo

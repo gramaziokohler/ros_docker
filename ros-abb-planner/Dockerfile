@@ -4,7 +4,7 @@
 # Usage:
 #  docker pull gramaziokohler/ros-abb-planner
 
-FROM gramaziokohler/ros-base
+FROM gramaziokohler/ros-base:19.11
 LABEL maintainer "Gonzalo Casas <casas@arch.ethz.ch>"
 
 SHELL ["/bin/bash","-c"]
