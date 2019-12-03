@@ -50,6 +50,15 @@ Contains MoveIt! configured with the Universal Robots packages.
 Contains MoveIt! configured with the flagship MoveIt! robot: Franka Emika's
 Panda.
 
+## ROS + MoveIt! Kuka IIWA
+
+[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-kuka-iiwa-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-kuka-iiwa-planner)
+[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-kuka-iiwa-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-kuka-iiwa-planner)
+
+    $ docker pull gramaziokohler/ros-kuka-iiwa-planner
+
+Contains MoveIt! configured with the Kuka IIWA 7 & 14 robots.
+
 ## How to use
 
 First, make sure [Docker](https://www.docker.com/) is installed on your system.
@@ -144,3 +153,17 @@ These images are maintained by Gramazio Kohler Research
 
 They are used by the [COMPAS FAB](https://gramaziokohler.github.io/compas_fab) framework
 to provide a [containerized ROS backend for planning and execution](https://gramaziokohler.github.io/compas_fab/latest/backends/ros.html#ros-on-docker-1).
+
+## Credits
+
+These docker images are only possible thanks to the huge contribution of the ROS and ROS-I community. Besides ROS itself, the following open source projects are built and included in them:
+
+- [MoveIt: ROS Motion Planning Framework](https://github.com/ros-planning/moveit)
+- [ROS Bridge Suite](https://github.com/RobotWebTools/rosbridge_suite/)
+- [ROS Sharp file server](https://github.com/siemens/ros-sharp/tree/master/ROS/file_server)
+- [ROS-I ABB & ABB Experimental](https://github.com/ros-industrial/abb)
+- [ROS-I UR](https://github.com/ros-industrial/universal_robot)
+- [ROS-I UR Modern Driver](https://github.com/ros-industrial/ur_modern_driver)
+- [ROS Panda planning](https://github.com/ros-planning/panda_moveit_config)
+- [ROS IIWA Stack](https://github.com/IFL-CAMP/iiwa_stack)
+- [NoVNC client](https://github.com/novnc/noVNC)
