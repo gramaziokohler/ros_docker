@@ -27,6 +27,8 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     # ABB packages
     && git clone -b ${ROS_DISTRO}-devel https://github.com/ros-industrial/abb.git \
     && git clone -b ${ROS_DISTRO}-devel https://github.com/ros-industrial/abb_experimental.git \
+    && git clone https://github.com/gramaziokohler/abb_irb4600_40_255.git \
+    && git clone https://github.com/gramaziokohler/abb_irb4600_40_255_moveit_config.git \
     # Install dependencies
     && cd $CATKIN_WS \
     && rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} \
