@@ -16,6 +16,7 @@ RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main"
     && apt-get install -y \
     # Basic utilities
     iputils-ping \
+    vim-tiny \
     # ROS bridge server and related packages
     ros-${ROS_DISTRO}-rosbridge-server \
     ros-${ROS_DISTRO}-tf2-web-republisher \
@@ -39,6 +40,11 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     && rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} \
     # Build catkin workspace
     && catkin_make
+
+# Always source ros_entrypoint.sh when launching bash (e.g. when attaching to container)
+RUN echo "source /ros_entrypoint.sh" >> /root/.bashrc \
+    # Make rest of shell session set +e so bash isn't killed on every non-zero return code
+    && echo "set +e" >> /ros_entrypoint.sh # Reset e after 
 
 
 COPY ./ros_catkin_entrypoint.sh /
