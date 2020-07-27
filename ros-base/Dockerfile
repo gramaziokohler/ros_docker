@@ -40,6 +40,8 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     # Build catkin workspace
     && catkin_make
 
+# Always source ros_entrypoint.sh when launching bash (e.g. when attaching to container)
+RUN echo "source /ros_entrypoint.sh" >> /root/.bashrc
 
 COPY ./ros_catkin_entrypoint.sh /
 ENTRYPOINT ["/ros_catkin_entrypoint.sh"]
