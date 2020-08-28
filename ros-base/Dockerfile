@@ -44,5 +44,7 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
 RUN echo "source /ros_entrypoint.sh" >> /root/.bashrc
 
 COPY ./ros_catkin_entrypoint.sh /
+RUN chmod +x /ros_catkin_entrypoint.sh
+
 ENTRYPOINT ["/ros_catkin_entrypoint.sh"]
 CMD ["bash"]
