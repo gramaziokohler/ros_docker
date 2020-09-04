@@ -4,7 +4,7 @@
 # Usage:
 #  docker pull gramaziokohler/ros-rfl-planner
 
-FROM gramaziokohler/ros-base:19.11
+FROM gramaziokohler/ros-base:20.09
 LABEL maintainer "Gonzalo Casas <casas@arch.ethz.ch>"
 
 SHELL ["/bin/bash","-c"]
