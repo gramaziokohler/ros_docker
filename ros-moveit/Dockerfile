@@ -4,7 +4,7 @@
 # Usage:
 #  docker pull gramaziokohler/ros-moveit
 
-FROM gramaziokohler/ros-base:latest
+FROM gramaziokohler/ros-base
 LABEL maintainer "Gonzalo Casas <casas@arch.ethz.ch>"
 
 SHELL ["/bin/bash","-c"]

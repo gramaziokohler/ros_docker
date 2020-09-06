@@ -65,17 +65,8 @@ First, make sure [Docker](https://www.docker.com/) is installed on your system.
 
 ### Building the docker images
 
-These images are build on Windows using WSL. The process is straight-forward:
-
-Open your bash shell in WSL and type:
-
-    $ make build
-
-### Publishing the docker images
-
-Once built, you can release all images to Docker Hub in one command:
-
-    $ make release
+These images are built and published by Github Actions on every push.
+If a push includes a tag, the images will also be tagged with it.
 
 ### Using the containers
 

@@ -4,7 +4,7 @@
 # Usage:
 #  docker pull gramaziokohler/ros-rfl-planner
 
-FROM gramaziokohler/ros-moveit:latest
+FROM gramaziokohler/ros-moveit
 LABEL maintainer "Gonzalo Casas <casas@arch.ethz.ch>"
 
 SHELL ["/bin/bash","-c"]
@@ -12,7 +12,8 @@ ENV CATKIN_WS=/root/catkin_ws
 RUN mkdir -p $CATKIN_WS/src
 
 # Add robot packages to local catkin workspace
-RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
+RUN echo "Building RFL Planner for ROS" \
+    && source /opt/ros/${ROS_DISTRO}/setup.bash \
     # Update apt-get because its cache is always cleared after installs to keep image size down
     && apt-get update \
     # RFL packages
