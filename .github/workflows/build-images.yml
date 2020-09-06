@@ -61,7 +61,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: gramaziokohler/ros-moveit
         tag_with_ref: true
-        path: ros-ros-moveit
+        path: ros-moveit
     - name: ROS RFL Planner / build and push
       uses: docker/build-push-action@v1
       with:
