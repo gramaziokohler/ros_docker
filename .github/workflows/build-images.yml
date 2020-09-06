@@ -3,8 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
 
@@ -23,9 +21,39 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: gramaziokohler/ros-base
         tag_with_ref: true
-        tag_with_sha: false
         path: ros-base
-
+    - name: ROS ABB Planner / build and push
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: gramaziokohler/ros-abb-planner
+        tag_with_ref: true
+        path: ros-abb-planner
+    - name: ROS Kuka IIWA Planner / build and push
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: gramaziokohler/ros-kuka-iiwa-planner
+        tag_with_ref: true
+        path: ros-kuka-iiwa-planner
+    - name: ROS Panda Planner / build and push
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: gramaziokohler/ros-panda-planner
+        tag_with_ref: true
+        path: ros-panda-planner
+    - name: ROS UR Planner / build and push
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: gramaziokohler/ros-ur-planner
+        tag_with_ref: true
+        path: ros-ur-planner
     - name: ROS RFL Planner / build and push
       uses: docker/build-push-action@v1
       with:
@@ -33,5 +61,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: gramaziokohler/ros-rfl-planner
         tag_with_ref: true
-        tag_with_sha: false
         path: ros-rfl-planner
