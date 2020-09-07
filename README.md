@@ -6,8 +6,8 @@ This repository provides `Dockerfile` files to run [ROS](https://ros.org) inside
 
 ## Base ROS image
 
-[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-base.svg)](https://hub.docker.com/r/gramaziokohler/ros-base)
-[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-base.svg)](https://microbadger.com/images/gramaziokohler/ros-base)
+[![](https://img.shields.io/docker/v/gramaziokohler/ros-base?sort=date)](https://hub.docker.com/r/gramaziokohler/ros-base)
+[![](https://img.shields.io/docker/image-size/gramaziokohler/ros-base?sort=date)](https://microbadger.com/images/gramaziokohler/ros-base)
 
     $ docker pull gramaziokohler/ros-base
 
@@ -15,8 +15,8 @@ Contains ROS and tools to use it over websockers with `rosbridge-suite`.
 
 ## X11 NoVNC display container
 
-[![](https://images.microbadger.com/badges/version/gramaziokohler/novnc.svg)](https://hub.docker.com/r/gramaziokohler/novnc)
-[![](https://images.microbadger.com/badges/image/gramaziokohler/novnc.svg)](https://microbadger.com/images/gramaziokohler/novnc)
+[![](https://img.shields.io/docker/v/gramaziokohler/novnc?sort=date)
+[![](https://img.shields.io/docker/image-size/gramaziokohler/novnc?sort=date)](https://microbadger.com/images/gramaziokohler/novnc)
 
     $ docker pull gramaziokohler/novnc
 
@@ -24,8 +24,8 @@ Display X11 applications (e.g. `RViz`) from other containers directly in the bro
 
 ## ROS + MoveIt! ABB
 
-[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-abb-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-abb-planner)
-[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-abb-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-abb-planner)
+[![](https://img.shields.io/docker/v/gramaziokohler/ros-abb-planner?sort=date)](https://hub.docker.com/r/gramaziokohler/ros-abb-planner)
+[![](https://img.shields.io/docker/image-size/gramaziokohler/ros-abb-planner?sort=date)](https://microbadger.com/images/gramaziokohler/ros-abb-planner)
 
     $ docker pull gramaziokohler/ros-abb-planner
 
@@ -33,8 +33,8 @@ Contains MoveIt! configured with the ABB packages.
 
 ## ROS + MoveIt! Universal Robots
 
-[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-ur-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-ur-planner)
-[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-ur-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-ur-planner)
+[![](https://img.shields.io/docker/v/gramaziokohler/ros-ur-planner?sort=date)](https://hub.docker.com/r/gramaziokohler/ros-ur-planner)
+[![](https://img.shields.io/docker/image-size/gramaziokohler/ros-ur-planner?sort=date)](https://microbadger.com/images/gramaziokohler/ros-ur-planner)
 
     $ docker pull gramaziokohler/ros-ur-planner
 
@@ -42,8 +42,8 @@ Contains MoveIt! configured with the Universal Robots packages.
 
 ## ROS + MoveIt! Franka Emika Panda
 
-[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-panda-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-panda-planner)
-[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-panda-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-panda-planner)
+[![](https://img.shields.io/docker/v/gramaziokohler/ros-panda-planner?sort=date)](https://hub.docker.com/r/gramaziokohler/ros-panda-planner)
+[![](https://img.shields.io/docker/image-size/gramaziokohler/ros-panda-planner?sort=date)](https://microbadger.com/images/gramaziokohler/ros-panda-planner)
 
     $ docker pull gramaziokohler/ros-panda-planner
 
@@ -52,8 +52,8 @@ Panda.
 
 ## ROS + MoveIt! Kuka IIWA
 
-[![](https://images.microbadger.com/badges/version/gramaziokohler/ros-kuka-iiwa-planner.svg)](https://hub.docker.com/r/gramaziokohler/ros-kuka-iiwa-planner)
-[![](https://images.microbadger.com/badges/image/gramaziokohler/ros-kuka-iiwa-planner.svg)](https://microbadger.com/images/gramaziokohler/ros-kuka-iiwa-planner)
+[![](https://img.shields.io/docker/v/gramaziokohler/ros-kuka-iiwa-planner?sort=date)](https://hub.docker.com/r/gramaziokohler/ros-kuka-iiwa-planner)
+[![](https://img.shields.io/docker/image-size/gramaziokohler/ros-kuka-iiwa-planner?sort=date)](https://microbadger.com/images/gramaziokohler/ros-kuka-iiwa-planner)
 
     $ docker pull gramaziokohler/ros-kuka-iiwa-planner
 
@@ -78,7 +78,7 @@ If a push includes a tag, the images will also be tagged with it.
     version: '2'
     services:
       ros-master:
-        image: gramaziokohler/ros-base:19.11
+        image: gramaziokohler/ros-base
         container_name: ros-master
         ports:
           - "11311:11311"
@@ -86,7 +86,7 @@ If a push includes a tag, the images will also be tagged with it.
           - roscore
 
       ros-bridge:
-        image: gramaziokohler/ros-panda-planner:19.11
+        image: gramaziokohler/ros-panda-planner
         container_name: ros-bridge
         environment:
           - "ROS_HOSTNAME=ros-bridge"
@@ -102,7 +102,7 @@ If a push includes a tag, the images will also be tagged with it.
           - rosbridge_websocket.launch
 
       panda-demo:
-        image: gramaziokohler/ros-panda-planner:19.11
+        image: gramaziokohler/ros-panda-planner
         container_name: panda-demo
         environment:
           - ROS_HOSTNAME=panda-demo
