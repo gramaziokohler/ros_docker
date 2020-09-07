@@ -15,7 +15,7 @@ Contains ROS and tools to use it over websockers with `rosbridge-suite`.
 
 ## X11 NoVNC display container
 
-[![](https://img.shields.io/docker/v/gramaziokohler/novnc?sort=date)
+[![](https://img.shields.io/docker/v/gramaziokohler/novnc?sort=date)](https://hub.docker.com/r/gramaziokohler/novnc)
 [![](https://img.shields.io/docker/image-size/gramaziokohler/novnc?sort=date)](https://microbadger.com/images/gramaziokohler/novnc)
 
     $ docker pull gramaziokohler/novnc
