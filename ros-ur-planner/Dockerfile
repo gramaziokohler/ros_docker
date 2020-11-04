@@ -15,7 +15,7 @@ RUN mkdir -p $CATKIN_WS/src
 RUN echo "Building UR Planner for ROS" \
     && source /opt/ros/${ROS_DISTRO}/setup.bash \
     # Update apt-get because its cache is always cleared after installs to keep image size down
-    && apt-get update \
+    && apt-get update && apt-get -y upgrade \
     # UR packages
     && git clone -b ${ROS_DISTRO}-devel https://github.com/ros-industrial/universal_robot.git \
     # Install dependencies

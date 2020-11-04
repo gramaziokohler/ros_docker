@@ -19,7 +19,7 @@ COPY ./demo-iiwa.launch /
 RUN echo "Building IIWA Stack Planner for ROS" \
     && source /opt/ros/${ROS_DISTRO}/setup.bash \
     # Update apt-get because its cache is always cleared after installs to keep image size down
-    && apt-get update \
+    && apt-get update && apt-get -y upgrade \
     # IIWA Stack packages
     && git clone https://github.com/IFL-CAMP/iiwa_stack.git \
     # Install dependencies

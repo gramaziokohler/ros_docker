@@ -14,7 +14,7 @@ RUN mkdir -p $CATKIN_WS/src
 # Add robot packages to local catkin workspace
 RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     # Update apt-get because its cache is always cleared after installs to keep image size down
-    && apt-get update \
+    && apt-get update && apt-get -y upgrade \
     # Panda packages
     && git clone -b ${ROS_DISTRO}-devel https://github.com/ros-planning/moveit_tutorials.git \
     && git clone -b ${ROS_DISTRO}-devel https://github.com/ros-planning/panda_moveit_config.git \
