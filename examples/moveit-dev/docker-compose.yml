@@ -1,0 +1,28 @@
+# This file shows how to use the moveit-dev container with a UR robot
+# using a locally mounted volume for the catkin workspace
+# To enable RVIZ with NoVNC, uncomment the commented out lines below. 
+version: '2'
+services:
+  ros-moveit:
+    image: gramaziokohler/ros-moveit-dev
+    container_name: ros-moveit
+    environment:
+      - ROS_HOSTNAME=ros-moveit
+      - ROS_MASTER_URI=http://ros-moveit:11311
+      - ROS_LANG_DISABLE=genlisp:gennodejs:geneus
+      # - DISPLAY=gui:0.0
+    # depends_on:
+    #   - gui
+    ports:
+      - "9090:9090"
+    command:
+      - roslaunch
+      - /root/catkin_ws/scripts/main.launch
+    volumes:
+      - ./scripts:/root/catkin_ws/scripts
+      - ./src:/root/catkin_ws/src
+
+  # gui:
+  #   image: gramaziokohler/novnc:latest
+  #   ports:
+  #     - "8080:8080"

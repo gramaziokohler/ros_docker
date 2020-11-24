@@ -59,6 +59,15 @@ Panda.
 
 Contains MoveIt! configured with the Kuka IIWA 7 & 14 robots.
 
+## ROS + MoveIt! for development
+
+[![](https://img.shields.io/docker/v/gramaziokohler/ros-moveit-dev?sort=date)](https://hub.docker.com/r/gramaziokohler/ros-moveit-dev)
+[![](https://img.shields.io/docker/image-size/gramaziokohler/ros-moveit-dev?sort=date)](https://microbadger.com/images/gramaziokohler/ros-moveit-dev)
+
+    $ docker pull gramaziokohler/ros-moveit-dev
+
+Contains MoveIt! with an empty catkin workspace to be mounted on the host for a fast development cycle.
+
 ## How to use
 
 First, make sure [Docker](https://www.docker.com/) is installed on your system.
