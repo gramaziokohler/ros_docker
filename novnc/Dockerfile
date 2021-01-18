@@ -4,7 +4,7 @@
 # Usage:
 #  docker pull gramaziokohler/novnc
 
-FROM debian:stretch-slim
+FROM debian:buster-slim
 
 # Install git, supervisor, VNC, & X11 packages
 RUN apt-get update && apt-get install -y \
@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
     fluxbox \
     git \
     net-tools \
+    procps \
+    python3 \
     socat \
     supervisor \
     x11vnc \
@@ -32,7 +34,7 @@ ENV HOME=/root \
     DISPLAY_HEIGHT=768 \
     RUN_FLUXBOX=yes
 
-RUN git clone -b v1.1.0 https://github.com/novnc/noVNC.git /opt/novnc \
+RUN git clone -b v1.2.0 --recursive https://github.com/novnc/noVNC.git /opt/novnc \
     && rm -rf /opt/novnc/.git
 
 COPY . /root
