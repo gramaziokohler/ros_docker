@@ -11,7 +11,7 @@ This repository provides `Dockerfile` files to run [ROS](https://ros.org) inside
 
     $ docker pull gramaziokohler/ros-base
 
-Contains ROS and tools to use it over websockers with `rosbridge-suite`.
+Contains ROS and tools to use it over websockets with `rosbridge-suite`.
 
 ## X11 NoVNC display container
 
