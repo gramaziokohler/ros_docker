@@ -48,4 +48,4 @@ RUN echo "Building common MoveIt Planners" \
     && catkin_make \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ur5-demo.launch /root/catkin_ws/ur5-demo.launch
+ADD launch /root/catkin_ws/launch
