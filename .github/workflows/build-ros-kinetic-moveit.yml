@@ -1,4 +1,4 @@
-name: ROS Noetic MoveIt Docker Image CI
+name: ROS Kinetic MoveIt Docker Image CI
 
 on:
   push:
