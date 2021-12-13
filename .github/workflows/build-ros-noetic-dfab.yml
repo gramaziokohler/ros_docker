@@ -1,4 +1,4 @@
-name: ROS DFAB Docker Image CI
+name: ROS Noetic DFAB Docker Image CI
 
 on:
   push:
