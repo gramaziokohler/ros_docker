@@ -35,13 +35,16 @@ RUN echo "Building common MoveIt Planners" \
     && git clone https://github.com/ros-industrial/abb_driver.git \
     && git clone https://github.com/ros-industrial/abb_experimental.git \
     && git clone https://github.com/gramaziokohler/abb_irb4600_40_255.git \
-    && git clone https://github.com/gramaziokohler/abb_irb4600_40_255_moveit_config.git \
+    && git clone -b noetic-devel https://github.com/gramaziokohler/abb_irb4600_40_255_moveit_config.git \
     && git clone https://github.com/gramaziokohler/abb_irb4600_60_205.git \
-    && git clone https://github.com/gramaziokohler/abb_irb4600_60_205_moveit_config.git \
-    && git clone https://github.com/gramaziokohler/rfl_description.git \
+    && git clone -b noetic-devel https://github.com/gramaziokohler/abb_irb4600_60_205_moveit_config.git \
+    && git clone -b noetic-devel https://github.com/gramaziokohler/abb_crb15000_5_95_moveit_config.git \
+    && git clone -b noetic-devel https://github.com/gramaziokohler/abb_crb15000_5_95_moveit_config.git \
+    && git clone -b noetic-devel https://github.com/gramaziokohler/rfl_description.git \
     # Panda packages
     && git clone -b master https://github.com/ros-planning/moveit_tutorials.git \
-    && git clone -b melodic-devel https://github.com/ros-planning/panda_moveit_config.git \
+    # Using branch until this is fixed/merged: https://github.com/ros-planning/panda_moveit_config/pull/102
+    && git clone -b noetic-devel https://github.com/ros-planning/panda_moveit_config.git \
     # Install dependencies
     && cd $CATKIN_WS \
     && rosdep install -y --from-paths . --ignore-src --skip-keys="abb_driver gazebo" --rosdistro ${ROS_DISTRO} \
