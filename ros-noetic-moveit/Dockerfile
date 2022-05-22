@@ -38,8 +38,7 @@ RUN echo "Building common MoveIt Planners" \
     && git clone -b noetic-devel https://github.com/gramaziokohler/abb_irb4600_40_255_moveit_config.git \
     && git clone https://github.com/gramaziokohler/abb_irb4600_60_205.git \
     && git clone -b noetic-devel https://github.com/gramaziokohler/abb_irb4600_60_205_moveit_config.git \
-    && git clone -b noetic-devel https://github.com/gramaziokohler/abb_crb15000_5_95_moveit_config.git \
-    && git clone -b noetic-devel https://github.com/gramaziokohler/abb_crb15000_5_95_moveit_config.git \
+    && git clone https://github.com/gramaziokohler/abb_crb15000_5_95_moveit_config.git \
     && git clone -b noetic-devel https://github.com/gramaziokohler/rfl_description.git \
     # Panda packages
     && git clone -b master https://github.com/ros-planning/moveit_tutorials.git \
