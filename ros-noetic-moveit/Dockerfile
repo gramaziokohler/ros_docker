@@ -44,8 +44,11 @@ RUN echo "Building common MoveIt Planners" \
     && git clone -b noetic-devel https://github.com/gramaziokohler/rfl_description.git \
     # Panda packages
     && git clone -b master https://github.com/ros-planning/moveit_tutorials.git \
-    # Using branch until this is fixed/merged: https://github.com/ros-planning/panda_moveit_config/pull/102
     && git clone -b noetic-devel https://github.com/ros-planning/panda_moveit_config.git \
+    # Kuka packages
+    && git clone https://github.com/ros-industrial/kuka.git \
+    && git clone https://github.com/ros-industrial/kuka_experimental.git \
+    && git clone https://github.com/gramaziokohler/kr6r900sixx_moveit_config \
     # Install dependencies
     && cd $CATKIN_WS \
     && rosdep install -y --from-paths . --ignore-src --skip-keys="abb_driver gazebo" --rosdistro ${ROS_DISTRO} \
