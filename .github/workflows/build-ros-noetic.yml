@@ -68,6 +68,7 @@ jobs:
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
+        build-args: FROM_IMAGE_TAG=${{ steps.meta.outputs.tags }}
 
   # Build ROS Noetic DFAB image
   build-dfab:
@@ -99,3 +100,4 @@ jobs:
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
+        build-args: FROM_IMAGE_TAG=${{ steps.meta.outputs.tags }}

@@ -1,10 +1,12 @@
 # Build:
-#  docker build --rm -f Dockerfile -t gramaziokohler/ros-noetic-dfab .
+#  docker build --rm -f Dockerfile --build-arg FROM_IMAGE_TAG=${TAG} -t gramaziokohler/ros-noetic-dfab:${TAG} .
 #
 # Usage:
 #  docker pull gramaziokohler/ros-noetic-dfab
 
-FROM gramaziokohler/ros-noetic-moveit
+ARG FROM_IMAGE_TAG
+
+FROM gramaziokohler/ros-noetic-moveit:${FROM_IMAGE_TAG}
 LABEL maintainer "Gonzalo Casas <casas@arch.ethz.ch>"
 
 SHELL ["/bin/bash","-c"]

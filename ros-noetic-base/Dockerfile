@@ -1,5 +1,5 @@
 # Build:
-#  docker build --rm -f Dockerfile -t gramaziokohler/ros-noetic-base .
+#  docker build --rm -f Dockerfile -t gramaziokohler/ros-noetic-base:${TAG} .
 #
 # Usage:
 #  docker pull gramaziokohler/ros-noetic-base
