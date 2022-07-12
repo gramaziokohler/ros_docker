@@ -35,7 +35,9 @@ RUN echo "Building common MoveIt Planners" \
     # ABB packages (abb_driver only included because some other packages reference it, but we don't use it)
     && git clone https://github.com/ros-industrial/abb.git \
     && git clone https://github.com/ros-industrial/abb_driver.git \
-    && git clone https://github.com/ros-industrial/abb_experimental.git \
+    # Switching to GKR fork until abb_irb1600_8_145 support is merged (https://github.com/ros-industrial/abb_experimental/pull/136)
+    && git clone -b add_irb1600_8_145 https://github.com/gramaziokohler/abb_experimental.git \
+    && git clone https://github.com/gramaziokohler/abb_irb1600_8_145_moveit_config \
     && git clone https://github.com/gramaziokohler/abb_irb4600_40_255.git \
     && git clone -b noetic-devel https://github.com/gramaziokohler/abb_irb4600_40_255_moveit_config.git \
     && git clone https://github.com/gramaziokohler/abb_irb4600_60_205.git \
