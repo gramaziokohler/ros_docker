@@ -30,13 +30,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN echo "Building common MoveIt Planners" \
     && source /opt/ros/${ROS_DISTRO}/setup.bash \
     && apt-get update && apt-get -y upgrade \
+    # Add Bio-IK kinematic solver
+    && git clone https://github.com/TAMS-Group/bio_ik.git \
     # UR packages
     && git clone -b calibration_devel https://github.com/fmauch/universal_robot.git \
     # ABB packages (abb_driver only included because some other packages reference it, but we don't use it)
     && git clone https://github.com/ros-industrial/abb.git \
     && git clone https://github.com/ros-industrial/abb_driver.git \
-    # Switching to GKR fork until abb_irb1600_8_145 support is merged (https://github.com/ros-industrial/abb_experimental/pull/136)
-    && git clone -b add_irb1600_8_145 https://github.com/gramaziokohler/abb_experimental.git \
+    && git clone https://github.com/ros-industrial/abb_experimental.git \
     && git clone https://github.com/gramaziokohler/abb_irb1600_8_145_moveit_config \
     && git clone https://github.com/gramaziokohler/abb_irb4600_40_255.git \
     && git clone -b noetic-devel https://github.com/gramaziokohler/abb_irb4600_40_255_moveit_config.git \
